@@ -37,18 +37,29 @@
             border-bottom: 2px solid #f0f0f0;
         }
         
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            background-color: transparent; /* 透明背景，图片不存在时不显示 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* 当图片加载失败时，背景图会显示透明，看起来就像不存在 */
+        
         h1 {
             color: #2d3748;
             font-size: 2.5em;
             margin-bottom: 10px;
-        }
-        
-        .app-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 22px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .section {
@@ -149,10 +160,14 @@
 <body>
     <div class="container">
         <header>
-            <!-- 应用图标（可选） -->
-            <!-- <img src="icon.png" alt="App Icon" class="app-icon"> -->
-            <h1>📱 [桂福通] APP技术支持</h1>
-            <p>我们随时为您提供帮助</p>
+            <div class="title-container">
+                <img src="icon.png"
+                     class="app-icon"
+                     onerror="this.style.display='none'">
+                <center>
+                    <h1>[桂福通] APP技术支持</h1>
+                </center>
+            </div>
         </header>
         
         <div class="section">
@@ -186,7 +201,7 @@
                     <h3>邮箱支持</h3>
                     <p>liuxiangjuan@jbinfo.cn</p>
                     <p>工作时间：周一至周五 9:00-17:00</p>
-                    <a href="liuxiangjuan@jbinfo.cn" class="button">发送邮件</a>
+                    <a href="mailto:liuxiangjuan@jbinfo.cn" class="button">发送邮件</a>
                 </div>
                 
                 <div class="contact-card">
